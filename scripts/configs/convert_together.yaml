@@ -1,0 +1,2 @@
+src_dir: "data/together_generations"
+dst_dir: "data/converted_together_generations"

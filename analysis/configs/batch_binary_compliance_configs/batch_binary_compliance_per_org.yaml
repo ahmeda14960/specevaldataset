@@ -1,0 +1,7 @@
+# Config for per-organization batch binary compliance analysis
+base_dir: data/batched_compliance
+output_dir: analysis/outputs/batch_binary_compliance_per_org
+judges:
+  - claude-3-7-sonnet-20250219
+  - gpt-4.1-2025-04-14
+  - gemini-2.0-flash-001

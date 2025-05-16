@@ -1,0 +1,11 @@
+# Configuration for combine_likert_compliance.py
+# List of paths to Likert compliance CSV files from different judges
+csv_paths:
+  # Google judge files
+  - "analysis/likert_compliance_analysis/google_gemini-2.0-flash-001/overall_avg_score_gpt-4.1-2025-04-14.csv"
+  # Example paths for other judges - replace with actual paths
+  - "analysis/likert_compliance_analysis/anthropic_claude-3-7-sonnet-20250219/overall_avg_score_gpt-4.1-2025-04-14.csv"
+  - "analysis/likert_compliance_analysis/openai_gpt-4.1-2025-04-14/overall_avg_score_gpt-4.1-2025-04-14.csv"
+
+# Output directory for combined analysis
+output_dir: "analysis/multi_judge_likert"

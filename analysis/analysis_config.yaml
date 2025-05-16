@@ -1,0 +1,31 @@
+# Configuration file for analyze_compliance.py
+
+# There are two ways to specify which judgment data to analyze:
+
+# OPTION 1: Organization-based directory structure
+# Specify the organization name here (e.g., "JUDGE_GOOGLE" or "JUDGE_ANTHROPIC")
+# The script will automatically discover all subdirectories within data/judgements/JUDGE_{org}/
+# This handles both directory formats:
+#   - data/judgements/JUDGE_GOOGLE/evaluatorxcandidate/
+#   - data/judgements/JUDGE_GOOGLE/evaluatorxcandidatexjudge/
+# The judge model information will be extracted from the JSON files' metadata.
+judgment_org: "JUDGE_OPENAI"
+
+# To analyze a different organization, change the value above:
+# judgment_org: "JUDGE_ANTHROPIC"
+# Or comment it out to use Option 2 below.
+
+# OPTION 2: Traditional configuration (used only when judgment_org is not specified)
+# Explicitly list judgment directory names (relative to data/judgements) to include in the analysis.
+# Format: evaluatorxcandidatexjudge
+# judgement_directories:
+#   - gpt-4.1-2025-04-14xgpt-4.1-2025-04-14xgpt-4.1-2025-04-14
+#   - gpt-4.1-2025-04-14xclaude-3-7-sonnet-20250219xgpt-4.1-2025-04-14
+#   - gpt-4.1-2025-04-14xQwen-Qwen2.5-72B-Instruct-Turboxgpt-4.1-2025-04-14
+#   - gpt-4.1-2025-04-14xmeta-llama-Meta-Llama-3.1-405B-Instruct-Lite-Proxgpt-4.1-2025-04-14
+#   - gpt-4.1-2025-04-14xmistralai-Mistral-7B-Instruct-v0.3xgpt-4.1-2025-04-14
+#   - gpt-4.1-2025-04-14xgemini-2.0-flash-001xgpt-4.1-2025-04-14
+#   - gpt-4.1-2025-04-14xdeepseek-ai-DeepSeek-R1xgpt-4.1-2025-04-14
+#   # Add other specific directories from data/judgements/ as needed
+#   # Example:
+#   # - some_other_evalxsome_candidatexsome_judge

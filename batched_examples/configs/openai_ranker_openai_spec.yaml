@@ -1,0 +1,56 @@
+# Example configuration for run_batched_ranking.py
+
+# List of paths to specification JSONL files
+# These define the policy statements against which models are compared.
+spec_name: openai
+
+spec_path: data/specs/openai/jsonl/openai.jsonl
+  # - data/specs/anthropic/jsonl/anthropic_spec.jsonl
+  # - data/specs/google/jsonl/google_play_spec.jsonl
+
+# List of paths to directories containing candidate model generations.
+# The basename of each directory will be used as the candidate model's name.
+# Each directory should contain .json files named after statement_ids from the spec_files.
+# Example: candidate_generation_dirs/model_A_results/some_statement_id.json
+candidate_generation_dirs:
+  - data/batched_generations/openai/claude-3-5-haiku-20241022/20250507_001902/results
+  - data/batched_generations/openai/claude-3-5-sonnet-20240620/20250506_210838/results
+  - data/batched_generations/openai/claude-3-7-sonnet-20250219/20250506_115521/results
+  - data/batched_generations/openai/gpt-4.1-2025-04-14/20250509_011554/results
+  - data/batched_generations/openai/gpt-4.1-mini-2025-04-14/20250509_012247/results
+  - data/batched_generations/openai/gpt-4.1-nano-2025-04-14/20250509_012359/results
+  - data/batched_generations/openai/gpt-4o-2024-11-20/20250509_011731/results
+  - data/batched_generations/openai/gpt-4o-mini-2024-07-18/20250509_012106/results
+  - data/converted_together_generations/openai/deepseek-ai-DeepSeek-V3/20250509_003136/results
+  - data/converted_together_generations/openai/meta-llama-Llama-4-Maverick-17B-128E-Instruct-FP8/20250509_004214/results
+  - data/converted_together_generations/openai/meta-llama-Meta-Llama-3.1-405B-Instruct-Turbo/20250509_004035/results
+  - data/converted_together_generations/openai/Qwen-Qwen2-72B-Instruct/20250509_004612/results
+  - data/converted_together_generations/openai/Qwen-Qwen2.5-72B-Instruct-Turbo/20250509_004709/results
+  - data/converted_together_generations/openai/Qwen-Qwen3-235B-A22B-fp8-tput/20250509_005135/results
+  - data/batched_google_generations/openai/gemini-1.5-pro/20250509_181701/results
+  - data/batched_google_generations/openai/gemini-2.0-flash-001/20250509_181627/results
+
+
+# Details for the ranking judge model (must be a batch-capable model)
+ranking_judge_model_name: gpt-4.1-2025-04-14
+ranking_judge_org: openai # "openai" or "anthropic"
+
+# Base directory to store all batch ranking metadata and final results
+output_dir_base: data/batched_rankings
+
+# Number of ranking prompts to include in each batch request to the judge model
+# Adjust based on provider limits and desired throughput.
+# OpenAI Batch API has a limit on requests per file (e.g., 50,000) and also per-minute rate limits for batch creation.
+# Anthropic Batch API supports up to 100,000 requests per batch.
+batch_size: 100000 #50000
+
+# Optional temperature for the ranking judge model (0.0 for deterministic ranking)
+temperature: 0.0
+
+# Enable verbose logging for detailed output (true/false)
+verbose: true
+
+# API Keys (can also be set as environment variables)
+# If set here, they will be used. Otherwise, the script checks environment variables.
+# openai_api_key: YOUR_OPENAI_KEY_HERE
+# anthropic_api_key: YOUR_ANTHROPIC_KEY_HERE

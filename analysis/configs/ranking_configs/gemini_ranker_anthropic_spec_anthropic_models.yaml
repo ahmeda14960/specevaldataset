@@ -1,0 +1,37 @@
+# Configuration file for analyze_rankings.py
+
+# Name of the ranker model folder under data/rankings
+# The ranker is the model that performed the A/B comparison
+#ranker: ranker_gpt-4.1-mini-2025-04-14
+#ranker: ranker_claude-3-5-haiku-20241022
+ranker: ranker_gemini-2.0-flash-001
+# Name of the evaluator folder under data/rankings/<ranker>
+# The evaluator is the model that generated the prompts/inputs for ranking
+# can also swap in whatever is after the ranker.
+evaluator: google
+
+# List of candidate models (suffixes of the VS folders under the evaluator)
+models:
+  # top tier models
+  # - gpt-4.1-2025-04-14
+  # - claude-3-7-sonnet-20250219
+  # - gemini-2.0-flash-001
+  # - deepseek-ai-DeepSeek-V3
+  # - Qwen-Qwen3-235B-A22B-fp8-tput
+  # - meta-llama-Llama-4-Maverick-17B-128E-Instruct-FP8
+  - claude-3-5-sonnet-20240620
+  - claude-3-7-sonnet-20250219
+  - claude-3-5-haiku-20241022
+
+# If true, correct for position bias by combining A vs B and B vs A
+type: all_pairs
+all_pairs: true
+
+# Input/output paths (relative to project root)
+rankings_dir: data/rankings_google
+output_dir: analysis/rankings_analysis
+
+# Specification dataset directory under the ranker
+spec: anthropic
+# Raw ranker model name directory under rankings_dir (without 'ranker_' prefix)
+ranker_model: gemini-2.0-flash-001

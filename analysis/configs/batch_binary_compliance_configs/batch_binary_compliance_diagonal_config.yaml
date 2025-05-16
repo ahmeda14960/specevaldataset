@@ -1,0 +1,26 @@
+# Configuration for diagonal binary compliance analysis
+# Base directory where batch compliance JSONs are stored
+base_dir: "data/batched_compliance"
+
+# Output directory for generated plots and CSVs
+output_dir: "analysis/outputs/batch_binary_compliance_diagonal"
+
+# Specs to process (directories named spec_<name> under base_dir)
+specs:
+  - openai
+  - anthropic
+  - google
+
+# Judges to process (directories named judge_<identifier> under each spec folder)
+judges:
+  - claude-3-7-sonnet-20250219
+  - gpt-4.1-2025-04-14
+  - gemini-2.0-flash-001
+
+# Representative top models for each organization (must match known model names)
+top_openai_model: "gpt-4.1-2025-04-14"
+top_anthropic_model: "claude-3-7-sonnet-20250219"
+top_google_model: "gemini-2.0-flash-001"
+top_deepseek_model: "deepseek-ai/DeepSeek-V3"
+top_qwen_model: "Qwen/Qwen3-235B-A22B-fp8-tput"
+top_meta_llama_model: "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8" 

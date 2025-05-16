@@ -1,0 +1,30 @@
+spec_path: "data/specs/anthropic/jsonl/anthropic.jsonl"
+# Provide a list of candidate output directories, each containing statement_id.json files
+candidate_generation_dirs:
+  - data/batched_generations/anthropic/claude-3-5-haiku-20241022/20250509_024816/results
+  - data/batched_generations/anthropic/claude-3-5-sonnet-20240620/20250509_024548/results
+  - data/batched_generations/anthropic/claude-3-7-sonnet-20250219/20250509_024321/results
+  - data/batched_generations/anthropic/gpt-4.1-2025-04-14/20250509_012958/results
+  - data/batched_generations/anthropic/gpt-4.1-mini-2025-04-14/20250509_020317/results
+  - data/batched_generations/anthropic/gpt-4.1-nano-2025-04-14/20250509_020712/results
+  - data/batched_generations/anthropic/gpt-4o-2024-11-20/20250509_015730/results
+  - data/batched_generations/anthropic/gpt-4o-mini-2024-07-18/20250509_015838/results
+  - data/converted_together_generations/anthropic/deepseek-ai-DeepSeek-V3/20250509_084023/results
+  - data/converted_together_generations/anthropic/meta-llama-Llama-4-Maverick-17B-128E-Instruct-FP8/20250509_041501/results
+  - data/converted_together_generations/anthropic/meta-llama-Meta-Llama-3.1-405B-Instruct-Turbo/20250509_034758/results
+  - data/converted_together_generations/anthropic/Qwen-Qwen2-72B-Instruct/20250509_051527/results
+  - data/converted_together_generations/anthropic/Qwen-Qwen2.5-72B-Instruct-Turbo/20250509_125244/results
+  - data/converted_together_generations/anthropic/Qwen-Qwen3-235B-A22B-fp8-tput/20250509_075837/results
+  - data/batched_google_generations/anthropic/gemini-1.5-pro/20250509_181648/results
+  - data/batched_google_generations/anthropic/gemini-2.0-flash-001/20250509_181538/results
+
+# Output settings
+output_dir_base: "data/rankings_google/"
+
+# Ranking settings
+ranking_org: "google"
+ranking_model_name: "gemini-2.5-pro-preview-05-06"
+verbose: true
+all_pairs: true
+skip_existing: true
+batched_generations_mode: true

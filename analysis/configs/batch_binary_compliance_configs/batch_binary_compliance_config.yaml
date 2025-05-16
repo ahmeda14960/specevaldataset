@@ -1,0 +1,19 @@
+# Configuration for batch binary compliance analysis
+# Base directory where batch compliance JSONs are stored
+base_dir: "data/batched_compliance"
+
+# Output directory for generated plots
+output_dir: "analysis/batch_binary_compliance_analysis"
+
+# Specs to process (directories named spec_<name> under base_dir)
+specs:
+  - anthropic
+  - google
+  - openai
+
+# Judges to process (directories named judge_<identifier> under each spec folder)
+judges:
+  - claude-3-7-sonnet-20250219
+  - gpt-4.1-2025-04-14
+  - gemini-2.0-flash-001
+short_mode: true

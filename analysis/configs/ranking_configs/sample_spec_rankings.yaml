@@ -1,0 +1,29 @@
+# Sample SpecEval ranking configuration with per-org specs
+
+# Spec directory to use (e.g. spec_openai, spec_google, spec_anthropic)
+spec: spec_openai
+
+# Judge job directory under the spec (folder containing batched outputs)
+judge: judge_claude-3-7-sonnet-20250219
+
+# Ranking model to evaluate (folder under <spec>/<judge>/<ranker>/<evaluator>/)
+ranker: ranker_gpt-4.1-mini-2025-04-14
+
+# List of candidate models to compare (must match folder names in pair dirs)
+models:
+  - gpt-4.1-2025-04-14
+  - claude-3-5-haiku-20241022
+  - claude-3-5-sonnet-20240620
+
+# Analysis type: 'all_pairs' to correct for position bias, 'unique_pairs' otherwise
+type: all_pairs
+
+# Enable position-bias correction when type is all_pairs
+all_pairs: true
+
+# Base directory where the batched ranking JSONs live
+# Should point to: data/batched_rankings/<spec>/<judge>/<ranker>/<evaluator>/
+rankings_dir: data/batched_rankings/spec_openai/judge_claude-3-7-sonnet-20250219/ranker_gpt-4.1-mini-2025-04-14/openai
+
+# Output directory for summary CSVs and plots
+output_dir: analysis/rankings_analysis

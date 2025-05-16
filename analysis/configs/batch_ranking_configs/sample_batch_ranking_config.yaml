@@ -1,0 +1,24 @@
+# Sample configuration for batch ranking analysis
+
+# Specification name (used to form 'spec_<spec>' directory under base_dir)
+spec: openai
+
+# Judge job identifier (used to form 'judge_<judge>' directory under spec)
+judge: claude-3-7-sonnet-20250219
+
+# List of candidate models to analyze (must match subdirectory names in '<modelA>x<modelB>')
+models:
+  - gpt-4.1-2025-04-14
+  - gpt-4o-2024-11-20
+  -
+  - claude-3-5-haiku-20241022
+  - claude-3-5-sonnet-20240620
+
+# Enable position-bias correction (requires both A x B and B x A result folders)
+all_pairs: true
+
+# Base directory where the batched ranking outputs live
+evaluate base_dir: data/batched_rankings
+
+# Output directory for summary CSVs and plots
+output_dir: analysis/batch_ranking_analysis

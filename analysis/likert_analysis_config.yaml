@@ -1,0 +1,21 @@
+# Configuration file for analyze_likert_compliance.py
+
+# There are two ways to specify which Likert judgement data to analyze:
+
+# OPTION 1: Organization-based directory structure
+# Specify the full judge directory name here (including provider and model)
+# The script will analyze subdirectories under:
+# data/likert_judgements/JUDGE_provider_model/
+#judgment_judge_dir: "JUDGE_google_gemini-2.0-flash-001"
+#judgment_judge_dir: "JUDGE_openai_gpt-4.1-2025-04-14"
+judgment_judge_dir: "JUDGE_anthropic_claude-3-7-sonnet-20250219"
+
+# OPTION 2: Manual path specification (used when judgment_judge_dir is not specified)
+# List of relative paths under data/likert_judgements to include in analysis
+# # In the standard structure, these would be in format: YYYY-MM-DD/evaluatorxcandidate
+# judgement_paths:
+#   - 04_28_2025/gpt-4.1-2025-04-14xgpt-4.1-2025-04-14
+#   - 04_28_2025/gpt-4.1-2025-04-14xclaude-3-7-sonnet-20250219
+#   - 04_28_2025/gpt-4.1-2025-04-14xQwen-Qwen2.5-72B-Instruct-Turbo
+#   - 04_28_2025/gpt-4.1-2025-04-14xmeta-llama-Meta-Llama-3.1-405B-Instruct-Lite-Pro
+#   # Add other date/evaluatorxcandidate paths as needed

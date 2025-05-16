@@ -1,0 +1,10 @@
+# Configuration for combine_binary_compliance.py
+# List of paths to binary compliance CSV files from different judges
+csv_paths:
+  # Anthropic judge files
+  - "analysis/binary_compliance_analysis/JUDGE_ANTHROPIC/overall_compliance_gpt-4.1-2025-04-14_3-7-sonnet-20250219.csv"
+  - "analysis/binary_compliance_analysis/JUDGE_GOOGLE/overall_compliance_gpt-4.1-2025-04-14_2.0-flash-001.csv"
+  - "analysis/binary_compliance_analysis/JUDGE_OPENAI/overall_compliance_gpt-4.1-2025-04-14_gpt-4.1-2025-04-14.csv"
+
+# Output directory for combined analysis
+output_dir: "analysis/multi_judge_binary"

@@ -1,0 +1,6 @@
+ranking_summary_csvs:
+- analysis/rankings_analysis/ranker_claude-3-5-haiku-20241022/gpt-4.1-2025-04-14/ranking_summary.csv
+- analysis/rankings_analysis/ranker_gemini-2.0-flash-001/gpt-4.1-2025-04-14/ranking_summary.csv
+- analysis/rankings_analysis/ranker_gpt-4.1-mini-2025-04-14/gpt-4.1-2025-04-14/ranking_summary.csv
+score_metric: wins_minus_losses
+output_dir: analysis/multi_ranker_comparison

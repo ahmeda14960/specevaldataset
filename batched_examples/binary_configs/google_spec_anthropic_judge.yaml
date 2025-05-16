@@ -1,0 +1,39 @@
+# Example configuration for run_batched_binary_compliance.py
+
+# Specification details
+spec_name: google
+spec_path: data/specs/google/jsonl/google.jsonl
+
+# Directories containing model generation outputs (JSON files named by statement_id)
+candidate_generation_dirs:
+  - data/batched_generations/google/claude-3-5-haiku-20241022/20250509_025611/results
+  - data/batched_generations/google/claude-3-5-sonnet-20240620/20250509_025521/results
+  - data/batched_generations/google/claude-3-7-sonnet-20250219/20250509_025246/results
+  - data/batched_generations/google/gpt-4.1-2025-04-14/20250509_030411/results
+  - data/batched_generations/google/gpt-4.1-mini-2025-04-14/20250509_030821/results
+  - data/batched_generations/google/gpt-4.1-nano-2025-04-14/20250509_133549/results
+  - data/batched_generations/google/gpt-4o-2024-11-20/20250509_030502/results
+  - data/batched_generations/google/gpt-4o-mini-2024-07-18/20250509_030631/results
+  - data/converted_together_generations/google/deepseek-ai-DeepSeek-V3/20250509_054133/results
+  - data/converted_together_generations/google/meta-llama-Llama-4-Maverick-17B-128E-Instruct-FP8/20250509_021252/results
+  - data/converted_together_generations/google/meta-llama-Meta-Llama-3.1-405B-Instruct-Turbo/20250509_024643/results
+  - data/converted_together_generations/google/Qwen-Qwen2-72B-Instruct/20250509_035308/results
+  - data/converted_together_generations/google/Qwen-Qwen2.5-72B-Instruct-Turbo/20250509_080640/results
+  - data/converted_together_generations/google/Qwen-Qwen3-235B-A22B-fp8-tput/20250509_054141/results
+  - data/batched_google_generations/google/gemini-1.5-pro/20250509_181503/results
+  - data/batched_google_generations/google/gemini-2.0-flash-001/20250509_181448/results
+
+
+# Judge model configuration
+compliance_judge_model_name: claude-3-7-sonnet-20250219
+compliance_judge_org: anthropic
+
+# Output location and batching
+output_dir_base: data/batched_compliance
+batch_size: 50000
+temperature: 0.0
+verbose: true
+
+# API keys (optional; can also use OPENAI_API_KEY or ANTHROPIC_API_KEY env vars)
+# openai_api_key: YOUR_OPENAI_API_KEY_HERE
+# anthropic_api_key: YOUR_ANTHROPIC_API_KEY_HERE

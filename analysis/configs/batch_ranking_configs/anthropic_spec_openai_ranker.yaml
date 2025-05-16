@@ -1,0 +1,44 @@
+# Sample configuration for batch ranking analysis
+
+# Specification name (used to form 'spec_<spec>' directory under base_dir)
+spec: anthropic
+
+# Judge job identifier (used to form 'judge_<judge>' directory under spec)
+judge: gpt-4.1-2025-04-14
+
+# List of candidate models to analyze (must match subdirectory names in '<modelA>x<modelB>')
+models:
+  # - gpt-4o-2024-11-20
+  # - gpt-4o-mini-2024-07-18
+  # - gpt-4.1-2025-04-14
+  # - gpt-4.1-mini-2025-04-14
+  # - gpt-4.1-nano-2025-04-14
+  # - claude-3-7-sonnet-20250219
+  # - claude-3-5-sonnet-20240620
+  # - claude-3-5-haiku-20241022
+  # - gemini-2.0-flash-001
+  # - gemini-1.5-pro
+  # - deepseek-ai-DeepSeek-V3
+  # - Qwen-Qwen3-235B-A22B-fp8-tput
+  # - Qwen-Qwen2.5-72B-Instruct-Turbo
+  # - Qwen-Qwen2-72B-Instruct
+  # - meta-llama-Llama-4-Maverick-17B-128E-Instruct-FP8
+  # - meta-llama-Meta-Llama-3.1-405B-Instruct-Turbo
+
+
+# top tier models
+  - gpt-4.1-2025-04-14
+  - claude-3-7-sonnet-20250219
+  - gemini-2.0-flash-001
+  - deepseek-ai-DeepSeek-V3
+  - Qwen-Qwen3-235B-A22B-fp8-tput
+  - meta-llama-Llama-4-Maverick-17B-128E-Instruct-FP8
+
+# Enable position-bias correction (requires both A x B and B x A result folders)
+all_pairs: false
+
+# Base directory where the batched ranking outputs live
+evaluate base_dir: data/batched_rankings
+
+# Output directory for summary CSVs and plots
+output_dir: analysis/batch_ranking_analysis

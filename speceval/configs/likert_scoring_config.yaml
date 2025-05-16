@@ -1,0 +1,17 @@
+spec_path: data/specs/openai_model_spec.jsonl  # Path to the original specification file (JSONL or MD)
+generation_dirs:
+  - data/generations/gpt-4.1-2025-04-14xgpt-4.1-2025-04-14  # Add other directories to score here
+  - data/generations/gpt-4.1-2025-04-14xclaude-3-7-sonnet-20250219
+  - data/generations/gpt-4.1-2025-04-14xQwen-Qwen2.5-72B-Instruct-Turbo
+  - data/generations/gpt-4.1-2025-04-14xmeta-llama-Meta-Llama-3.1-405B-Instruct-Lite-Pro
+  - data/generations/gpt-4.1-2025-04-14xmistralai-Mistral-7B-Instruct-v0.3
+  - data/generations/gpt-4.1-2025-04-14xdeepseek-ai-DeepSeek-R1
+  - data/generations/gpt-4.1-2025-04-14xgemini-2.0-flash-001
+  # - data/generations/another_evalxanother_cand
+output_base_dir: data/likert_judgements
+judge_model_name: gpt-4.1-2025-04-14 # Or gpt-4o-2024-08-06, etc.
+judge_provider: openai # Can be 'openai', 'anthropic', or 'google'
+
+# Note: The script will automatically organize outputs in this directory structure:
+# data/likert_judgements/JUDGE_{judge_provider}_{judge_model_name}/MM_DD_YYYY/evaluatorxcandidate/
+# Example: data/likert_judgements/JUDGE_google_gemini-2.0-flash-001/04_28_2025/gpt-4.1-2025-04-14xclaude-3-7-sonnet-20250219/

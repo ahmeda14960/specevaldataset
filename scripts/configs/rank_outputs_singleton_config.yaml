@@ -1,0 +1,30 @@
+spec_path: "data/specs/openai/jsonl/openai.jsonl"
+# Provide a list of candidate output directories, each containing statement_id.json files
+candidate_generation_dirs:
+  - data/batched_generations/openai/claude-3-5-haiku-20241022/20250507_001902/results
+  - data/batched_generations/openai/claude-3-5-sonnet-20240620/20250506_210838/results
+  - data/batched_generations/openai/claude-3-7-sonnet-20250219/20250506_115521/results
+  - data/batched_generations/openai/gpt-4.1-2025-04-14/20250509_011554/results
+  - data/batched_generations/openai/gpt-4.1-mini-2025-04-14/20250509_012247/results
+  - data/batched_generations/openai/gpt-4.1-nano-2025-04-14/20250509_012359/results
+  - data/batched_generations/openai/gpt-4o-2024-11-20/20250509_011731/results
+  - data/batched_generations/openai/gpt-4o-mini-2024-07-18/20250509_012106/results
+  - data/converted_together_generations/openai/deepseek-ai-DeepSeek-V3/20250509_003136/results
+  - data/converted_together_generations/openai/meta-llama-Llama-4-Maverick-17B-128E-Instruct-FP8/20250509_004214/results
+  - data/converted_together_generations/openai/meta-llama-Meta-Llama-3.1-405B-Instruct-Turbo/20250509_004035/results
+  - data/converted_together_generations/openai/Qwen-Qwen2-72B-Instruct/20250509_004612/results
+  - data/converted_together_generations/openai/Qwen-Qwen2.5-72B-Instruct-Turbo/20250509_004709/results
+  - data/converted_together_generations/openai/Qwen-Qwen3-235B-A22B-fp8-tput/20250509_005135/results
+  - data/batched_google_generations/openai/gemini-1.5-pro/20250509_181701/results
+  - data/batched_google_generations/openai/gemini-2.0-flash-001/20250509_181627/results
+
+# Output settings
+output_dir_base: "data/rankings_google/"
+
+# Ranking settings
+ranking_org: "google"
+ranking_model_name: "gemini-2.0-flash-001"
+verbose: true
+all_pairs: true
+skip_existing: true
+batched_generations_mode: true

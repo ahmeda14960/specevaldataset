@@ -1,0 +1,16 @@
+rankings_dir: data/rankings
+output_dir: analysis/ranking_correlation
+rankers:
+- ranker_claude-3-5-haiku-20241022
+- ranker_gemini-2.0-flash-001
+- ranker_gpt-4.1-mini-2025-04-14
+evaluators:
+- gpt-4.1-2025-04-14
+models:
+  - claude-3-7-sonnet-20250219
+  - Qwen-Qwen2.5-72B-Instruct-Turbo
+  - meta-llama-Meta-Llama-3.1-405B-Instruct-Lite-Pro
+  - mistralai-Mistral-7B-Instruct-v0.3
+  - gemini-2.0-flash-001
+  - deepseek-ai-DeepSeek-R1
+  - gpt-4.1-2025-04-14

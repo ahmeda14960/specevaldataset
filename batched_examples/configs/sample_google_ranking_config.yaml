@@ -1,0 +1,30 @@
+# Example configuration for run_batched_ranking.py using Google Gemini as the ranking judge
+
+# Name of the spec organization (openai, anthropic, google)
+spec_name: openai
+
+# Path to the Google specification JSONL file
+spec_path: data/specs/openai/jsonl/openai.jsonl
+
+# Paths to directories containing candidate model generations
+# Each directory should contain {statement_id}.json files with input/output lists
+candidate_generation_dirs:
+  - data/batched_generations/openai/claude-3-5-sonnet-20240620/20250506_210838/results # Replace with actual path to Model A's results
+  - data/batched_generations/openai/gpt-4.1-2025-04-14/20250509_011554/results # Replace with actual path to Model B's results
+
+# Batch-capable judge model settings
+ranking_judge_model_name: gemini-2.0-flash-001
+ranking_judge_org: google
+
+# GCS buckets for batch inputs and outputs (without gs:// prefix or with)
+input_bucket: gs://levanter-data/model_spec/
+output_bucket: gs://levanter-data/model_spec/ranking_outputs
+
+# Base directory to store all ranking metadata and results
+output_dir_base: data/batched_rankings
+batch_size: 10000  # Adjust based on quotas and desired throughput
+temperature: 0.0  # Deterministic ranking
+verbose: true
+
+# Google API key (or set GOOGLE_API_KEY env var)
+google_api_key: YOUR_GOOGLE_API_KEY_HERE

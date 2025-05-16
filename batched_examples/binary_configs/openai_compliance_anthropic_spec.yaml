@@ -1,0 +1,24 @@
+# Example configuration for run_batched_binary_compliance.py
+
+# Specification details
+spec_name: anthropic
+spec_path: data/specs/anthropic/jsonl/anthropic_spec.jsonl
+
+# One or more directories containing model generation outputs (JSON files named by statement_id)
+candidate_generation_dirs:
+  - data/batched_generations/anthropic/claude-3-5-haiku-20241022/20250509_024816/results
+  - data/batched_generations/anthropic/claude-3-7-sonnet-20250219/20250509_024321/results
+
+# Judge model configuration
+compliance_judge_model_name: gpt-4.1-2025-04-14
+compliance_judge_org: openai
+
+# Output location and batching
+output_dir_base: data/batched_compliance
+batch_size: 100
+temperature: 0.0
+verbose: true
+
+# API keys (optional; you can also set OPENAI_API_KEY or ANTHROPIC_API_KEY in environment)
+# openai_api_key: YOUR_OPENAI_API_KEY_HERE
+# anthropic_api_key: YOUR_ANTHROPIC_API_KEY_HERE

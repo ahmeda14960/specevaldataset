@@ -1,0 +1,32 @@
+# Configuration file for correlate_likert_compliance.py
+
+# Path to the directory containing Likert judgement data
+# All subdirectories will be recursively scanned for .json files
+likert_judgements_dir: "data/likert_judgements"
+
+# Path where analysis outputs will be saved
+output_dir: "analysis/likert_correlation"
+
+# Filter settings (optional)
+# When specified, only analyze judgements matching these filters
+# filters:
+#   # Only include these evaluator models
+#   evaluators:
+#     - "openai-gpt-4.1-2025-04-14"
+#     - "anthropic-claude-3-7-sonnet-20250219"
+#
+#   # Only include these candidate models
+#   candidates:
+#     - "anthropic-claude-3-7-sonnet-20250219"
+#     - "openai-gpt-4.1-2025-04-14"
+#
+#   # Only include these statement IDs
+#   statements:
+#     - "ask_clarifying_questions"
+#     - "be_helpful"
+#
+#   # Only include these judge models (extract from directory structure)
+#   judges:
+#     - "anthropic-claude-3-7-sonnet-20250219"
+#     - "openai-gpt-4.1-2025-04-14"
+#     - "google-gemini-2.0-flash-001"

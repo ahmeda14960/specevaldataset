@@ -1,0 +1,20 @@
+# Configuration for judge_ranking_consistency.py
+# Specify the two flipped ranking directories and output report path.
+
+# Directory containing first set of ranking JSON files (arbitrary order)
+# e.g., data/batched_rankings/openai/gpt-4.1-2025-04-14/gpt-4.1-2025-04-14xclaude-3-7-sonnet-20250219/results
+# or any path matching the directory structure
+
+first_dir: "data/rankings_google/gemini-2.0-flash-001/openai/ranker_gemini-2.0-flash-001/google/gpt-4.1-2025-04-14VSclaude-3-7-sonnet-20250219"
+
+# Directory containing second set of ranking JSON files (the other ordering)
+# e.g., data/batched_rankings/openai/gpt-4.1-2025-04-14/claude-3-7-sonnet-20250219xgpt-4.1-2025-04-14/results
+
+second_dir: "data/rankings_google/gemini-2.0-flash-001/openai/ranker_gemini-2.0-flash-001/google/claude-3-7-sonnet-20250219VSgpt-4.1-2025-04-14"
+
+# Path where the consistency report will be written
+# Default script output: analysis/judge_ranking_consistency_report.json
+output_report: "analysis/judge_ranking_consistency/"
+
+# Enable verbose logging (true/false)
+verbose: false
